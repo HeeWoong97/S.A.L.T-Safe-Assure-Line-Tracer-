@@ -1,14 +1,15 @@
 #include "Infrared.h"
 
 extern int val_left_samples[];
+extern int val_right_samples[];
 
 Infrared::Infrared()
 {
-    curMotorSpeed = MOTOR_SPEED;
-    startTime = 0;
-    endTime = 0;
+  curMotorSpeed = MOTOR_SPEED;
+  startTime = 0;
+  endTime = 0;
 
-    pinMode(INFRARED_PIN, INPUT);
+  pinMode(INFRARED_PIN, INPUT);
 }
 
 void Infrared::activate(void)
@@ -47,5 +48,29 @@ void Infrared::backUp(void)
 
 void Infrared::UTurn(void)
 {
+  int leftCnt = 0;
+  int rightCnt = 0;
 
+  bool leftTurn = false;
+  bool rightTurn = false;
+
+  // 회전할 방향 정하기
+  for (int i = 0; i < 10; i++) {
+    if (val_left_samples[i] == 1) {
+      leftCnt++;
+    }    
+    if (val_right_samples[i] == 1) {
+      rightCnt++;
+    }
+  }
+
+  // 왼쪽으로 돌기
+  if (leftCnt > rightCnt) {
+    turnLeft();
+    turnRight();
+  }
+  // 오른쪽으로 돌기
+  else {
+    rightTurn = true;
+  }
 }
