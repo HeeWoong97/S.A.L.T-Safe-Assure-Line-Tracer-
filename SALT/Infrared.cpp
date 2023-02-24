@@ -37,14 +37,14 @@ void Infrared::activate(void)
 
 void Infrared::backUp(void)
 {
-    motor_L.setSpeed(MOTOR_SPEED);
-    motor_R.setSpeed(MOTOR_SPEED);
-    motor_L.run(BACKWARD);
-    motor_R.run(BACKWARD);
-    delay(100);
+  motor_L.setSpeed(MOTOR_SPEED);
+  motor_R.setSpeed(MOTOR_SPEED);
+  motor_L.run(BACKWARD);
+  motor_R.run(BACKWARD);
+  delay(100);
 }
 
 void Infrared::UTurn(void)
 {
-    
+  
 }
