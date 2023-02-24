@@ -2,20 +2,21 @@
 #include <Arduino.h>
 #include <AFMotor.h>
 
+// SALT.ino에 선언된 전역변수 가져오기
+int val_left_samples[N];
+int val_right_samples[N];
+
 LineTracer::LineTracer(): motor_L(1), motor_R(4){
 
 
   // Initialize the sensor variables
-  val1 = 0;
-  val2 = 0;
-  val1_sum = 0;
-  val2_sum = 0;
-  val1_index = 0;
-  val2_index = 0;
-  for (int i = 0; i < n; i++) {
-    val1_samples[i] = 0;
-    val2_samples[i] = 0;
-  }
+  val_left = 0;
+  val_right = 0;
+  val_left_sum = 0;
+  val_right_sum = 0;
+  val_left_index = 0;
+  val_right_index = 0;
+  
 }
 
 //void LineTracer::setup() {
@@ -25,45 +26,45 @@ LineTracer::LineTracer(): motor_L(1), motor_R(4){
 //}
 
 
-void LineTracer::loop() {
+void LineTracer::activate() {
   readSensors();
   updateSampleArrays();
-  int val1_avg = calculateMovingAverage(val1_samples, val1_sum);
-  int val2_avg = calculateMovingAverage(val2_samples, val2_sum);
-  followLine(val1_avg, val2_avg);
+  int val_left_avg = calculateMovingAverage(val_left_samples, val_left_sum);
+  int val_right_avg = calculateMovingAverage(val_right_samples, val_right_sum);
+  followLine(val_left_avg, val_right_avg);
 }
 
 void LineTracer::readSensors() {
-  val1 = digitalRead(A0);
-  val2 = digitalRead(A5);
+  val_left = digitalRead(A0);
+  val_right = digitalRead(A5);
 }
 
 void LineTracer::updateSampleArrays() {
-  val1_sum = val1_sum - val1_samples[val1_index] + val1;
-  val2_sum = val2_sum - val2_samples[val2_index] + val2;
-  val1_samples[val1_index] = val1;
-  val2_samples[val2_index] = val2;
-  val1_index = (val1_index + 1) % n;
-  val2_index = (val2_index + 1) % n;
+  val_left_sum = val_left_sum - val_left_samples[val_left_index] + val_left;
+  val_right_sum = val_right_sum - val_right_samples[val_right_index] + val_right;
+  val_left_samples[val_left_index] = val_left;
+  val_right_samples[val_right_index] = val_right;
+  val_left_index = (val_left_index + 1) % N;
+  val_right_index = (val_right_index + 1) % N;
 }
 
 int LineTracer::calculateMovingAverage(int samples[], int sum) {
-  int avg = sum / n;
+  int avg = sum / N;
   return avg;
 }
 
-void LineTracer::followLine(int val1_avg, int val2_avg) {
-  if (val1_avg == 0 && val2_avg == 0) { 
+void LineTracer::followLine(int val_left_avg, int val_right_avg) {
+  if (val_left_avg == 0 && val_right_avg == 0) { 
     goForward();
   } 
   else {
     motor_L.setSpeed(225);
     motor_R.setSpeed(225);
-    if (val1_avg == 0 && val2_avg == 1) {
+    if (val_left_avg == 0 && val_right_avg == 1) {
       turnRight();
-    } else if (val1_avg == 1 && val2_avg == 0) {
+    } else if (val_left_avg == 1 && val_right_avg == 0) {
       turnLeft();
-    } else if (val1_avg == 1 && val2_avg == 1) {
+    } else if (val_left_avg == 1 && val_right_avg == 1) {
       randomTurn();
     }
   }
