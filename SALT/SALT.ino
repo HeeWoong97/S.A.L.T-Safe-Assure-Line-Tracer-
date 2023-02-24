@@ -3,10 +3,19 @@
 #include "Infrared.h"
 #include "LineTracer.h"
 
+
+
 // Create Object
 Motor motor;
 LineTracer lineTracer;
 Infrared infrared;
+
+// Global Variable
+
+static const int n = 10; // variable n for size of array for moving average filter
+int val_left_samples[n] = {};
+int val_right_samples[n] = {};
+
 
 void setup(void)
 {
@@ -15,5 +24,5 @@ void setup(void)
 
 void loop(void)
 {
-  lineTracer.loop();
+  lineTracer.activate();
 }
