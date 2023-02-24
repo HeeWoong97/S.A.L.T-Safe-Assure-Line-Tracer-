@@ -1,6 +1,7 @@
 #ifndef _MOTOR_H_
 #define _MOTOR_H_
 
+#include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <AFMotor.h>
 
