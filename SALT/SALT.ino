@@ -1,5 +1,10 @@
 #include <SoftwareSerial.h>
 #include "Motor.h"
+#include "LineTracer.h"
+
+// Create Object
+Motor motor;
+LineTracer lineTracer;
 
 void setup(void)
 {
@@ -8,5 +13,5 @@ void setup(void)
 
 void loop(void)
 {
-  Motor motor;
+  lineTracer.loop();
 }
