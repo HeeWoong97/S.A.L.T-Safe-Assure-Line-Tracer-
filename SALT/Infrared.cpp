@@ -1,14 +1,15 @@
 #include "Infrared.h"
 
 extern int val_left_samples[];
+extern int val_right_samples[];
 
 Infrared::Infrared()
 {
-    curMotorSpeed = MOTOR_SPEED;
-    startTime = 0;
-    endTime = 0;
+  curMotorSpeed = MOTOR_SPEED;
+  startTime = 0;
+  endTime = 0;
 
-    pinMode(INFRARED_PIN, INPUT);
+  pinMode(INFRARED_PIN, INPUT);
 }
 
 void Infrared::activate(void)
@@ -47,5 +48,5 @@ void Infrared::backUp(void)
 
 void Infrared::UTurn(void)
 {
-
+  
 }
