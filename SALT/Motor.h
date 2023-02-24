@@ -4,15 +4,18 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <AFMotor.h>
+#include <Arduino.h>
 
 #define MOTOR_SPEED 180
 
 class Motor {
 protected:
-    AF_DCMotor motor_L;
-    AF_DCMotor motor_R;
+  AF_DCMotor motor_L;
+  AF_DCMotor motor_R;
 public:
-    Motor();
+  Motor();
+  void turnLeft(void);
+  void turnRight(void);
 };
 
 #endif
