@@ -8,26 +8,58 @@ Infrared::Infrared()
   curMotorSpeed = MOTOR_SPEED;
   startTime = 0;
   endTime = 0;
+  zeros = 0;  
 
   pinMode(INFRARED_PIN, INPUT);
 }
 
 void Infrared::activate(void)
 {
-  int state = digitalRead(INFRARED_PIN);
+  bool is_something = false;
 
+  int state = digitalRead(INFRARED_PIN);
   if (state == 0) {
+    if (zeros <= 50) {
+      zeros++;
+    }
+    if (zeros > 40) {
+      is_something = true;
+    }
+  }
+  else if (state == 1) {
+    if (zeros > 0) {
+      zeros--;
+    }
+    if (zeros <= 40) {
+      is_something = false;
+    }
+  }
+  Serial.println(is_something);
+
+  if (is_something) {
     motor_L.run(RELEASE);
     motor_R.run(RELEASE);
 
-    if (startTime = 0) {
+    if (startTime == 0) {
       startTime = millis();
     }
     else {
       endTime = millis();
+      Serial.print("entTime - startTime: ");
+      Serial.println(endTime - startTime);
+      Serial.print("endTime: ");
+      Serial.println(endTime);
+      Serial.print("startTime: ");
+      Serial.println(startTime);
       if (endTime - startTime > INTERVAL) {
         backUp();
         UTurn();
+        startTime = 0;
+        endTime = 0;
+        Serial.print("endTime: ");
+        Serial.println(endTime);
+        Serial.print("startTime: ");
+        Serial.println(startTime);
       }
     }
   }
@@ -66,11 +98,16 @@ void Infrared::UTurn(void)
 
   // 왼쪽으로 돌기
   if (leftCnt > rightCnt) {
-    turnLeft();
-    turnRight();
+    leftPivotTurn();
+    while (digitalRead(LEFT_SENSOR_PIN) == 0) {
+      leftPivotTurn();
+    }
   }
   // 오른쪽으로 돌기
   else {
-    rightTurn = true;
+    rightPivotTurn();
+    while (digitalRead(RIGHT_SENSOR_PIN) == 0) {
+      rightPivotTurn();
+    }
   }
 }

@@ -65,7 +65,7 @@ void LineTracer::followLine(int val_left_avg, int val_right_avg) {
     } else if (val_left_avg == 1 && val_right_avg == 0) {
       turnLeft();
     } else if (val_left_avg == 1 && val_right_avg == 1) {
-      randomTurn();
+      // randomTurn();
     }
   }
 }

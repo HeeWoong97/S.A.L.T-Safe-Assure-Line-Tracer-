@@ -18,6 +18,7 @@ void setup(void)
 
 void loop(void)
 {
+  infrared.activate();
   lineTracer.activate();
-  collision.activate();
+  // collision.activate();
 }
