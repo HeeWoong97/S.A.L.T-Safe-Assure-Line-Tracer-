@@ -1,5 +1,8 @@
 #include <SoftwareSerial.h>
 #include "Motor.h"
+#include "Collision.h"
+
+Collision collision;
 
 void setup(void)
 {
@@ -8,5 +11,5 @@ void setup(void)
 
 void loop(void)
 {
-  Motor motor;
+  collision.activate();
 }
