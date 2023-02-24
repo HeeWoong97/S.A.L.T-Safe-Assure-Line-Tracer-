@@ -20,6 +20,8 @@ public:
   void activate(void);
   int getState(void);
   void backUp(void);
+  void turnLeft(void);
+  void turnRight(void);
   void UTurn(void);
 };
 

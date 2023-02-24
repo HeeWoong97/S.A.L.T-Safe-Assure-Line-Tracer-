@@ -46,7 +46,50 @@ void Infrared::backUp(void)
   delay(100);
 }
 
+void Infrared::turnLeft(void)
+{
+  motor_L.run(BACKWARD);
+  motor_R.run(FORWARD);
+  delay(20);
+  motor_L.run(RELEASE);
+  motor_R.run(FORWARD);
+  delay(60);
+}
+
+void Infrared::turnRight(void)
+{
+  motor_L.run(FORWARD);
+  motor_R.run(BACKWARD);
+  delay(20);
+  motor_L.run(FORWARD);
+  motor_R.run(RELEASE);
+  delay(60);
+}
+
 void Infrared::UTurn(void)
 {
-  
+  int leftCnt = 0;
+  int rightCnt = 0;
+
+  bool leftTurn = false;
+  bool rightTurn = false;
+
+  // 회전할 방향 정하기
+  for (int i = 0; i < 10; i++) {
+    if (val_left_samples[i] == 1) {
+      leftCnt++;
+    }    
+    if (val_right_samples[i] == 1) {
+      rightCnt++;
+    }
+  }
+
+  // 왼쪽으로 돌기
+  if (leftCnt > rightCnt) {
+    leftTurn = true;
+  }
+  // 오른쪽으로 돌기
+  else {
+    rightTurn = true;
+  }
 }
