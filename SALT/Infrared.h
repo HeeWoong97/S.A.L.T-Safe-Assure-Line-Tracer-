@@ -6,15 +6,17 @@
 
 #define LEFT_SENSOR_PIN   A0
 #define RIGHT_SENSOR_PIN  A5
-#define INFRARED_PIN      A4
+
+#define INFRARED_PIN      A3
 
 #define INTERVAL        3000
 
 class Infrared : public Motor {
 private:
   int curMotorSpeed;
-  int startTime;
-  int endTime;
+  unsigned long startTime;
+  unsigned long endTime;
+  int zeros;
 public:
   Infrared();
   void activate(void);
