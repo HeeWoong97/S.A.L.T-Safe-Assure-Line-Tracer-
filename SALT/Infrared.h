@@ -12,15 +12,15 @@
 
 class Infrared : public Motor {
 private:
-    int curMotorSpeed;
-    int startTime;
-    int endTime;
+  int curMotorSpeed;
+  int startTime;
+  int endTime;
 public:
-    Infrared();
-    void activate(void);
-    int getState(void);
-    void backUp(void);
-    void UTurn(void);
+  Infrared();
+  void activate(void);
+  int getState(void);
+  void backUp(void);
+  void UTurn(void);
 };
 
 #endif
