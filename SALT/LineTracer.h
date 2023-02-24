@@ -21,18 +21,18 @@ private:
   void randomTurn();
 
   // Variables  
-  static const int n = 10;
-  int val1;
-  int val2;
-  int val1_samples[n];
-  int val2_samples[n];
-  int val1_sum;
-  int val2_sum;
-  int val1_index;
-  int val2_index;
+
+  int val_left;
+  int val_right;
+  
+  int val_left_sum;
+  int val_right_sum;
+  int val_left_index;
+  int val_right_index;
   AF_DCMotor motor_L;
   AF_DCMotor motor_R;
 public:
+
   LineTracer();
   void setup();
   void activate();
