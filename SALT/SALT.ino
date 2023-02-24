@@ -13,5 +13,5 @@ void setup(void)
 
 void loop(void)
 {
-  lineTracer.loop();
+  lineTracer.activate();
 }

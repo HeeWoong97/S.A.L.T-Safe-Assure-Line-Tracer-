@@ -25,7 +25,7 @@ LineTracer::LineTracer(): motor_L(1), motor_R(4){
 //}
 
 
-void LineTracer::loop() {
+void LineTracer::activate() {
   readSensors();
   updateSampleArrays();
   int val1_avg = calculateMovingAverage(val1_samples, val1_sum);

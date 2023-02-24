@@ -35,7 +35,7 @@ private:
 public:
   LineTracer();
   void setup();
-  void loop();
+  void activate();
 };
 
 #endif
