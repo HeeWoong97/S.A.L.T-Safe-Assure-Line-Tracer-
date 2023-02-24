@@ -3,9 +3,8 @@
 #include <AFMotor.h>
 
 // SALT.ino에 선언된 전역변수 가져오기
-int n = 10;
-extern int val_left_samples[];
-extern int val_right_samples[];
+int val_left_samples[N];
+int val_right_samples[N];
 
 LineTracer::LineTracer(): motor_L(1), motor_R(4){
 
@@ -45,12 +44,12 @@ void LineTracer::updateSampleArrays() {
   val_right_sum = val_right_sum - val_right_samples[val_right_index] + val_right;
   val_left_samples[val_left_index] = val_left;
   val_right_samples[val_right_index] = val_right;
-  val_left_index = (val_left_index + 1) % n;
-  val_right_index = (val_right_index + 1) % n;
+  val_left_index = (val_left_index + 1) % N;
+  val_right_index = (val_right_index + 1) % N;
 }
 
 int LineTracer::calculateMovingAverage(int samples[], int sum) {
-  int avg = sum / n;
+  int avg = sum / N;
   return avg;
 }
 

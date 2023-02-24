@@ -7,6 +7,11 @@
 
 #include "Motor.h"
 
+#define N   10
+
+extern int val_left_samples[N];
+extern int val_right_samples[N];
+
 class LineTracer : public Motor {
 private:
 

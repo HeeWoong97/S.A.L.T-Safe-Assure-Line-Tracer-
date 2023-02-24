@@ -1,8 +1,9 @@
 #include "Infrared.h"
 
+extern int val_left_samples[];
+
 Infrared::Infrared()
 {
-    state = 0;
     curMotorSpeed = MOTOR_SPEED;
     startTime = 0;
     endTime = 0;
@@ -46,5 +47,5 @@ void Infrared::backUp(void)
 
 void Infrared::UTurn(void)
 {
-    
+  val_left_samples[1];
 }

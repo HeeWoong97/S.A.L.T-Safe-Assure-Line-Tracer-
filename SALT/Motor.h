@@ -1,6 +1,7 @@
 #ifndef _MOTOR_H_
 #define _MOTOR_H_
 
+#include <SoftwareSerial.h>
 #include <AFMotor.h>
 
 #define MOTOR_SPEED 180
