@@ -1,5 +1,6 @@
 #include <SoftwareSerial.h>
 #include "Motor.h"
+#include "Infrared.h"
 
 void setup(void)
 {
@@ -9,4 +10,5 @@ void setup(void)
 void loop(void)
 {
   Motor motor;
+  Infrared infrared;
 }
