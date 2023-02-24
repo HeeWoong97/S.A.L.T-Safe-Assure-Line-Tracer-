@@ -27,3 +27,17 @@ void Motor::turnRight(void)
   motor_R.run(RELEASE);
   delay(60);  
 }
+
+void Motor::leftPivotTurn(void)
+{
+  motor_L.run(BACKWARD);
+  motor_R.run(FORWARD);
+  delay(20);
+}
+
+void Motor::rightPivotTurn(void)
+{
+  motor_L.run(FORWARD);
+  motor_R.run(BACKWARD);
+  delay(20);
+}

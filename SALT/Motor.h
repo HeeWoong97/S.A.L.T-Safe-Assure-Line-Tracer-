@@ -16,6 +16,8 @@ public:
   Motor();
   void turnLeft(void);
   void turnRight(void);
+  void leftPivotTurn(void);
+  void rightPivotTurn(void);
 };
 
 #endif
