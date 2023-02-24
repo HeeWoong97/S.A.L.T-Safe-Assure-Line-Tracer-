@@ -1,6 +1,12 @@
 #include <SoftwareSerial.h>
 #include "Motor.h"
 #include "Infrared.h"
+#include "LineTracer.h"
+
+// Create Object
+Motor motor;
+LineTracer lineTracer;
+Infrared infrared;
 
 void setup(void)
 {
@@ -9,6 +15,5 @@ void setup(void)
 
 void loop(void)
 {
-  Motor motor;
-  Infrared infrared;
+  lineTracer.loop();
 }
