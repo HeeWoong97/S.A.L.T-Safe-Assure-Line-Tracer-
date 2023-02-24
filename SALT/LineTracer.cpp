@@ -77,24 +77,6 @@ void LineTracer::goForward() {
   motor_R.run(FORWARD);
 }
 
-// void LineTracer::turnRight() {
-//   motor_L.run(FORWARD);
-//   motor_R.run(BACKWARD);
-//   delay(20);
-//   motor_L.run(FORWARD);
-//   motor_R.run(RELEASE);
-//   delay(60);
-// }
-
-// void LineTracer::turnLeft() {
-//   motor_L.run(BACKWARD);
-//   motor_R.run(FORWARD);
-//   delay(20);
-//   motor_L.run(RELEASE);
-//   motor_R.run(FORWARD);
-//   delay(60);
-// }
-
 void LineTracer::randomTurn() {
   int direction = random(0,2);
 //  if (direction == 0){

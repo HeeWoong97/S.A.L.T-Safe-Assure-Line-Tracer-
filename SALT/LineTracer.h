@@ -21,8 +21,6 @@ private:
   int calculateMovingAverage(int samples[], int sum);
   void followLine(int val1_avg, int val2_avg);
   void goForward();
-  // void turnRight();
-  // void turnLeft();
   void randomTurn();
   
   // Variables  
