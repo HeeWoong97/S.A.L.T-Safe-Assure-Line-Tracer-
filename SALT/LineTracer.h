@@ -19,7 +19,7 @@ private:
   void turnRight();
   void turnLeft();
   void randomTurn();
-
+  
   // Variables  
   static const int n = 10;
   int val1;
