@@ -34,7 +34,6 @@ void Infrared::activate(void)
       is_something = false;
     }
   }
-  Serial.println(is_something);
 
   if (is_something) {
     motor_L.run(RELEASE);
@@ -45,21 +44,11 @@ void Infrared::activate(void)
     }
     else {
       endTime = millis();
-      Serial.print("entTime - startTime: ");
-      Serial.println(endTime - startTime);
-      Serial.print("endTime: ");
-      Serial.println(endTime);
-      Serial.print("startTime: ");
-      Serial.println(startTime);
       if (endTime - startTime > INTERVAL) {
         backUp();
         UTurn();
         startTime = 0;
         endTime = 0;
-        Serial.print("endTime: ");
-        Serial.println(endTime);
-        Serial.print("startTime: ");
-        Serial.println(startTime);
       }
     }
   }
