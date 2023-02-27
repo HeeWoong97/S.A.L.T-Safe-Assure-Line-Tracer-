@@ -10,7 +10,7 @@ void Collision::activate() {
     if (collisionValue < 900)   // 충돌 감지
     {
         analogWrite(BUZZER, TONE);
-        delay(50);
+        delay_ms(50);
     }
     else
     {
