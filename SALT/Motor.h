@@ -18,6 +18,7 @@ public:
   void turnRight(void);
   void leftPivotTurn(void);
   void rightPivotTurn(void);
+  void delay_ms(unsigned long milliseconds);
 };
 
 #endif
