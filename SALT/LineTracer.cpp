@@ -51,40 +51,43 @@ void LineTracer::followLine(int val_left_avg, int val_right_avg) {
     goForward();
   } 
   else {
-    motor_L.setSpeed(225);
-    motor_R.setSpeed(225);
+    motor_L.setSpeed(MOTOR_SPEED_TURN);
+    motor_R.setSpeed(MOTOR_SPEED_TURN);
     if (val_left_avg == 0 && val_right_avg == 1) {
       turnRight();
     } else if (val_left_avg == 1 && val_right_avg == 0) {
       turnLeft();
     } else if (val_left_avg == 1 && val_right_avg == 1) {
-      // randomTurn();
+       randomTurn();
     }
   }
 }
 
 void LineTracer::goForward() {
-  motor_L.setSpeed(180);
-  motor_R.setSpeed(180);
+  motor_L.setSpeed(MOTOR_SPEED);
+  motor_R.setSpeed(MOTOR_SPEED);
   motor_L.run(FORWARD);
   motor_R.run(FORWARD);
 }
 
 void LineTracer::randomTurn() {
   int direction = random(0,2);
-  motor_L.run(BACKWARD);
-  motor_R.run(FORWARD);
-  delay(200);  
-  motor_L.run(BACKWARD);
-  motor_R.run(BACKWARD);
-  delay(500);
-  motor_L.run(RELEASE);
-  motor_R.run(RELEASE);
-  delay(200);
-  motor_L.run(FORWARD);
-  motor_R.run(FORWARD);
-  delay(500);
-  motor_L.run(RELEASE);
-  motor_R.run(RELEASE);
-  delay(200);
+  if(direction == 0){
+    turnLeft();
+  } else turnRight();
+//  motor_L.run(BACKWARD);
+//  motor_R.run(FORWARD);
+//  delay(200);  
+//  motor_L.run(BACKWARD);
+//  motor_R.run(BACKWARD);
+//  delay(500);
+//  motor_L.run(RELEASE);
+//  motor_R.run(RELEASE);
+//  delay(200);
+//  motor_L.run(FORWARD);
+//  motor_R.run(FORWARD);
+//  delay(500);
+//  motor_L.run(RELEASE);
+//  motor_R.run(RELEASE);
+//  delay(200);
 }

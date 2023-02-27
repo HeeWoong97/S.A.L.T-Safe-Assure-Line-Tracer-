@@ -6,7 +6,9 @@
 #include <AFMotor.h>
 #include <Arduino.h>
 
-#define MOTOR_SPEED 180
+#define MOTOR_SPEED 255
+#define MOTOR_SPEED_TURN 225
+#define MOTOR_DELAY 10
 
 class Motor {
 protected:
@@ -18,6 +20,7 @@ public:
   void turnRight(void);
   void leftPivotTurn(void);
   void rightPivotTurn(void);
+  void delay_ms(unsigned long milliseconds);
 };
 
 #endif
