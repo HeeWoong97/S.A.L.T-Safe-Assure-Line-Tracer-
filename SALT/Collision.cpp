@@ -5,6 +5,7 @@ int Collision::readSensor() {
 }
 
 void Collision::activate() {
+  Serial.println("Collision");
     collisionValue = readSensor();
     Serial.println(collisionValue);
     if (collisionValue < 200)   // 충돌 감지

@@ -15,6 +15,7 @@ Infrared::Infrared()
 
 void Infrared::activate(void)
 {
+  Serial.println("Infrared");
   int state = digitalRead(INFRARED_PIN);
   if (state == 0) {
     if (zeros <= 50) {

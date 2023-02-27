@@ -20,6 +20,7 @@ LineTracer::LineTracer(): motor_L(1), motor_R(4){
 }
 
 void LineTracer::activate() {
+  Serial.println("LineTracer");
   readSensors();
   updateSampleArrays();
   int val_left_avg = calculateMovingAverage(val_left_samples, val_left_sum);

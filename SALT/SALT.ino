@@ -36,7 +36,7 @@ void loop(void)
     }
     before_state = is_something;
   }
-  collision.activate();
+  // collision.activate();
   infrared.activate();
   if (!is_something) {
     lineTracer.activate();
