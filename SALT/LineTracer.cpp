@@ -20,10 +20,6 @@ LineTracer::LineTracer(): motor_L(1), motor_R(4){
 }
 
 void LineTracer::activate() {
-  DotMatrix dotMatrix;
-
-  dotMatrix.displaySmile();
-
   readSensors();
   updateSampleArrays();
   int val_left_avg = calculateMovingAverage(val_left_samples, val_left_sum);
