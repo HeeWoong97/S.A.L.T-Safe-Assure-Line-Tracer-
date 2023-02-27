@@ -36,6 +36,10 @@ void Infrared::activate(void)
   }
 
   if (is_something) {
+    DotMatrix dotMatrix;
+
+    // dotMatrix.displaySad();
+
     motor_L.run(RELEASE);
     motor_R.run(RELEASE);
 

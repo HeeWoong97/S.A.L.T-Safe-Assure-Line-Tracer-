@@ -6,6 +6,7 @@
 #include <AFMotor.h>
 
 #include "Motor.h"
+#include "DotMatrix.h"
 
 #define N   10
 
@@ -32,8 +33,6 @@ private:
   int val_right_sum;
   int val_left_index;
   int val_right_index;
-  AF_DCMotor motor_L;
-  AF_DCMotor motor_R;
 public:
 
   LineTracer();
