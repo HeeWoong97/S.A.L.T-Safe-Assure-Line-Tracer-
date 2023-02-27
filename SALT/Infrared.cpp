@@ -48,4 +48,35 @@ void Infrared::backUp(void)
 void Infrared::UTurn(void)
 {
 
+<<<<<<< Updated upstream
 }
+=======
+  bool leftTurn = false;
+  bool rightTurn = false;
+
+  // 회전할 방향 정하기
+  for (int i = 0; i < 10; i++) {
+    if (val_left_samples[i] == 1) {
+      leftCnt++;
+    }    
+    if (val_right_samples[i] == 1) {
+      rightCnt++;
+    }
+  }
+
+  // 왼쪽으로 돌기
+  if (leftCnt > rightCnt) {
+    leftPivotTurn();
+    while (digitalRead(LEFT_SENSOR_PIN) == 0) {
+      leftPivotTurn();
+    }
+  }
+  // 오른쪽으로 돌기
+  else {
+    rightPivotTurn();
+    while (digitalRead(RIGHT_SENSOR_PIN) == 0) {
+      rightPivotTurn();
+    }
+  }
+}
+>>>>>>> Stashed changes
