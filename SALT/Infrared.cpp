@@ -3,6 +3,8 @@
 extern int val_left_samples[];
 extern int val_right_samples[];
 
+bool is_something = false;
+
 Infrared::Infrared()
 {
   curMotorSpeed = MOTOR_SPEED;
@@ -15,8 +17,6 @@ Infrared::Infrared()
 
 void Infrared::activate(void)
 {
-  bool is_something = false;
-
   int state = digitalRead(INFRARED_PIN);
   if (state == 0) {
     if (zeros <= 50) {

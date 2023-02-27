@@ -11,6 +11,8 @@ Collision collision;
 Infrared infrared;
 LineTracer lineTracer;
 
+extern bool is_something;
+
 void setup(void)
 {
   Serial.begin(9600);
@@ -19,6 +21,8 @@ void setup(void)
 void loop(void)
 {
   infrared.activate();
-  lineTracer.activate();
+  if (!is_something) {
+    lineTracer.activate();
+  }
   // collision.activate();
 }

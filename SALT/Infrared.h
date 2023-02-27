@@ -11,6 +11,8 @@
 
 #define INTERVAL        3000
 
+extern bool is_somthing;
+
 class Infrared : public Motor {
 private:
   int curMotorSpeed;
