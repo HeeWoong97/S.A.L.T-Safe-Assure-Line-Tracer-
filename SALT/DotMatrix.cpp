@@ -35,13 +35,13 @@ DotMatrix::DotMatrix() : lc(2, 10, 9, 1)
 void DotMatrix::displaySmile(void)
 {
   for (int i = 0; i < 8; i++) {
-    lc.setRow(0, i, shapes[SMILE]);
+    lc.setRow(0, i, shapes[SMILE][i]);
   }
 }
 
 void DotMatrix::displaySad(void)
 {
   for (int i = 0; i < 8; i++) {
-    lc.setRow(0, i, shapes[SAD]);
+    lc.setRow(0, i, shapes[SAD][i]);
   }
 }

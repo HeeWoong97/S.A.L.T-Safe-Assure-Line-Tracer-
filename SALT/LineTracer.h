@@ -6,7 +6,6 @@
 #include <AFMotor.h>
 
 #include "Motor.h"
-#include "DotMatrix.h"
 
 #define N   10
 
