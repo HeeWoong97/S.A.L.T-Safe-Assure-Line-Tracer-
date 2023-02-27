@@ -5,15 +5,15 @@ int Collision::readSensor() {
 }
 
 void Collision::activate() {
+  Serial.println("Collision");
     collisionValue = readSensor();
     Serial.println(collisionValue);
-    if (collisionValue < 900)   // 충돌 감지
+    if (collisionValue < 200)   // 충돌 감지
     {
-        analogWrite(BUZZER, TONE);
-        delay(50);
-    }
-    else
-    {
-        analogWrite(BUZZER, 0);
+        Buzzer buzzer;
+        motor_L.run(RELEASE);
+        motor_R.run(RELEASE);
+        buzzer.playSi();
+        delay_ms(500);
     }
 }
