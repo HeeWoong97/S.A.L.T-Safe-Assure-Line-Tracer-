@@ -15,7 +15,6 @@ extern bool is_somthing;
 
 class Infrared : public Motor {
 private:
-  int curMotorSpeed;
   unsigned long startTime;
   unsigned long endTime;
   int zeros;
