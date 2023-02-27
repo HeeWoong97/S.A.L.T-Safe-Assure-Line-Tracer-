@@ -1,7 +1,6 @@
 #ifndef _INFRARED_H_
 #define _INFRARED_H_
 
-#include <Arduino.h>
 #include "Motor.h"
 
 #define LEFT_SENSOR_PIN   A0

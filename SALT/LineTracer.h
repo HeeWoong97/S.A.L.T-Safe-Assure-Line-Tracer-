@@ -1,10 +1,6 @@
 #ifndef _LINETRACER_H_
 #define _LINETRACER_H_
 
-#include <SoftwareSerial.h>
-#include <Arduino.h>
-#include <AFMotor.h>
-
 #include "Motor.h"
 
 #define N   10

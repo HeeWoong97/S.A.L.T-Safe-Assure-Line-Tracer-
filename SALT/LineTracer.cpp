@@ -1,6 +1,4 @@
 #include "LineTracer.h"
-#include <Arduino.h>
-#include <AFMotor.h>
 
 // SALT.ino에 선언된 전역변수 가져오기
 int val_left_samples[N];

@@ -4,7 +4,6 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <AFMotor.h>
-#include <Arduino.h>
 
 #define MOTOR_SPEED 255
 #define MOTOR_SPEED_TURN 225
