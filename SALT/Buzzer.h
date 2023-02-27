@@ -18,7 +18,6 @@ class Buzzer {
 private:
 
 public:
-  Buzzer();
   void playDo(void);
   void playRe(void);
   void playMi(void);

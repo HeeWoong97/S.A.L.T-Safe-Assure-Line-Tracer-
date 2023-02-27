@@ -12,6 +12,7 @@ Collision collision;
 Infrared infrared;
 LineTracer lineTracer;
 DotMatrix dotMatrix;
+Buzzer buzzer;
 
 extern bool is_something;
 bool before_state;
@@ -28,16 +29,16 @@ void loop(void)
   if (is_something != before_state) {
     if (is_something == true) {
       dotMatrix.displaySad();
+      buzzer.playSi();
     }
     else {
       dotMatrix.displaySmile();
     }
     before_state = is_something;
   }
-
+  collision.activate();
   infrared.activate();
   if (!is_something) {
     lineTracer.activate();
   }
-  // // collision.activate();
 }

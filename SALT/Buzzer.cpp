@@ -1,10 +1,5 @@
 #include "Buzzer.h"
 
-Buzzer::Buzzer()
-{
-  pinMode(BUZZER_PIN, OUTPUT);
-}
-
 void Buzzer::playDo(void)
 {
   tone(BUZZER_PIN, C, TEMPO);

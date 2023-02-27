@@ -2,7 +2,7 @@
 #define _COLLISION_H_
 
 #include "Motor.h"
-
+#include "Buzzer.h"
 #define COLLISION_SENSOR    A2
 #define BUZZER  9 
 #define TONE    660 // 충돌 시 나오는 사운드
