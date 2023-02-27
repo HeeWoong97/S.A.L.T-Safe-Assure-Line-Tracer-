@@ -16,6 +16,7 @@ void Motor::turnLeft(void)
   motor_L.run(BACKWARD);
   motor_R.run(FORWARD);
   delay_ms(10);
+<<<<<<< Updated upstream
 //  delay(10);  
 //  delay(20);
   motor_L.run(RELEASE);
@@ -23,6 +24,13 @@ void Motor::turnLeft(void)
   delay_ms(10);
 //  delay(10);  
 //  delay(60);
+=======
+//  delay(10);
+  motor_L.run(RELEASE);
+  motor_R.run(FORWARD);
+  delay_ms(10);
+//  delay(10);
+>>>>>>> Stashed changes
 }
 
 void Motor::turnRight(void)
@@ -42,7 +50,10 @@ void Motor::leftPivotTurn(void)
   motor_L.run(BACKWARD);
   motor_R.run(FORWARD);
   delay_ms(10);
+<<<<<<< Updated upstream
 //  delay(10);  
+=======
+>>>>>>> Stashed changes
 //  delay(20);
 }
 
@@ -51,15 +62,28 @@ void Motor::rightPivotTurn(void)
   motor_L.run(FORWARD);
   motor_R.run(BACKWARD);
   delay_ms(10);
+<<<<<<< Updated upstream
 //  delay(10);  
 //  delay(20);
 }
 
 void delay_ms(unsigned long milliseconds) {
+=======
+//  delay(20);
+}
+
+void Motor::delay_ms(unsigned long milliseconds){
+>>>>>>> Stashed changes
   unsigned long startTime = millis(); // Store the current time
 
   while (millis() - startTime < milliseconds) {
     // Do nothing, just wait for the specified delay
   }
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
+  
+
 }
 >>>>>>> Stashed changes
