@@ -8,9 +8,6 @@ Motor motor;
 LineTracer lineTracer;
 Infrared infrared;
 
-//// Create Variable
-//unsigned long time_previous, time_current;
-
 void setup(void)
 {
   Serial.begin(9600);

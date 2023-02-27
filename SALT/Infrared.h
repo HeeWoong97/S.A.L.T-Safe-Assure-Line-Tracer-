@@ -10,8 +10,6 @@
 
 #define INTERVAL        3000
 
-
-
 class Infrared : public Motor {
 private:
   int curMotorSpeed;
