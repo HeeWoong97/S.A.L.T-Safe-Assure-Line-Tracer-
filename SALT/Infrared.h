@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "Motor.h"
+#include "DotMatrix.h"
 
 #define LEFT_SENSOR_PIN   A0
 #define RIGHT_SENSOR_PIN  A5
