@@ -7,11 +7,9 @@ bool is_something = false;
 
 Infrared::Infrared()
 {
-  curMotorSpeed = MOTOR_SPEED;
   startTime = 0;
   endTime = 0;
   zeros = 0;  
-
   pinMode(INFRARED_PIN, INPUT);
 }
 
