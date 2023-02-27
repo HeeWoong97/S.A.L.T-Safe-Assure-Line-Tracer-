@@ -19,17 +19,10 @@ LineTracer::LineTracer(): motor_L(1), motor_R(4){
   
 }
 
-//void LineTracer::setup() {
-//  // Initialize the motor objects
-//  motor_L.setSpeed(0);
-//  motor_R.setSpeed(0);
-//}
-
-
 void LineTracer::activate() {
   DotMatrix dotMatrix;
 
-  // dotMatrix.displaySmile();
+  dotMatrix.displaySmile();
 
   readSensors();
   updateSampleArrays();
@@ -83,13 +76,6 @@ void LineTracer::goForward() {
 
 void LineTracer::randomTurn() {
   int direction = random(0,2);
-//  if (direction == 0){
-//    motor_L.run(BACKWARD);
-//    motor_R.run(FORWARD);
-//  } else {
-//    motor_L.run(FORWARD);
-//    motor_R.run(BACKWARD);
-//  }
   motor_L.run(BACKWARD);
   motor_R.run(FORWARD);
   delay(200);  

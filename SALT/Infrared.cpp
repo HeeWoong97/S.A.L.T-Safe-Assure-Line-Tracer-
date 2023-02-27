@@ -17,6 +17,9 @@ Infrared::Infrared()
 
 void Infrared::activate(void)
 {
+  DotMatrix dotMatrix;
+
+  dotMatrix.displaySmile();
   int state = digitalRead(INFRARED_PIN);
   if (state == 0) {
     if (zeros <= 50) {
@@ -36,9 +39,7 @@ void Infrared::activate(void)
   }
 
   if (is_something) {
-    DotMatrix dotMatrix;
-
-    // dotMatrix.displaySad();
+    dotMatrix.displaySad();
 
     motor_L.run(RELEASE);
     motor_R.run(RELEASE);
