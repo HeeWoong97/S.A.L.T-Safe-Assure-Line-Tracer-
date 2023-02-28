@@ -13,7 +13,7 @@ void Collision::activate() {
         Buzzer buzzer;
         motor_L.run(RELEASE);
         motor_R.run(RELEASE);
-        buzzer.playSi();
+        buzzer.playCollide();
         delay_ms(500);
     }
 }
