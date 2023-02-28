@@ -29,7 +29,7 @@ void loop(void)
   if (is_something != before_state) {
     if (is_something == true) {
       dotMatrix.displaySad();
-      buzzer.playCollide();
+      // buzzer.playCollide();
     }
     else {
       dotMatrix.displaySmile();
